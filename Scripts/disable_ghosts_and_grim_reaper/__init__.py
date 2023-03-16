@@ -37,27 +37,3 @@ def _exited_pipeline(self, *args, **kwargs):
 
 
 DeathSuperInteraction._exited_pipeline = _exited_pipeline
-
-
-class PhysicalBodyCreationData(CreationDataBase):
-
-    def get_definition(*args, **kwargs):
-        resolver = args[1]
-        sim = resolver.get_participant(ParticipantType.Actor)
-        logger.info('sim type: ' + str(type(sim)))
-        return Ghost.URNSTONE_DEFINITION.get_definition(*args, **kwargs)
-
-    def get_creation_params(*args, **kwargs):
-        logger.info('get_creation_params')
-        return ObjectCreationParams(Ghost.URNSTONE_DEFINITION.get_definition(*args, **kwargs), {})
-
-    def setup_created_object(*args, **kwargs):
-        logger.info('setup_created_object')
-        return Ghost.URNSTONE_DEFINITION.setup_created_object(*args, **kwargs)
-
-    def get_source_object(*args, **kwargs):
-        logger.info('get_source_object')
-        return Ghost.URNSTONE_DEFINITION.get_source_object(*args, **kwargs)
-
-
-DeathSuperInteraction.INSTANCE_TUNABLES['death_element'].locked_args['creation_data'] = PhysicalBodyCreationData

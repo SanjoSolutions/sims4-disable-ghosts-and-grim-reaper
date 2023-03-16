@@ -525,7 +525,6 @@
       <T n="affordance">13452<!--grimReaper_DeathFinalize--></T>
     </U>
   </L>
-  <T n="save_lock_tooltip">0x58E0B681<!--You cannot do this while a Sim is dying!--></T>
   <E n="scoring_priority">NORMAL</E>
   <T n="subaction_selection_weight">1</T>
   <V n="super_affordance_compatibility" t="literal">
